@@ -6,7 +6,6 @@ from selenium.webdriver.support import expected_conditions as EC
 import urllib.parse
 import re
 import time
-import csv
 import uuid
 
 
@@ -96,7 +95,7 @@ class Tokopedia:
 
         url_safe_cat = urllib.parse.quote(cat)
         url = f"https://www.tokopedia.com/search?st=product&q={url_safe_cat}"
-        print(f'Scraping for category {cat}..')
+        # print(f'Scraping for category {cat}..')
         self.driver.get(url)
 
         for i in range(2):

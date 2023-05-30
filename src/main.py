@@ -6,6 +6,7 @@ from pydub import AudioSegment
 from dotenv import load_dotenv
 import openai
 from pydub.silence import split_on_silence
+import threading
 
 from src.tokopediaScraper import Tokopedia
 from src.response import Response
@@ -45,16 +46,32 @@ def getRecommendation(text: str) -> list:
     return items
 
 
-def getProducts(tools: list):
-
+def threadGetProducts(products, tool: str):
     tokopedia = Tokopedia("src/resources/chromedriver/chromedriver.exe")
 
-    products = []
-    for tool in tools:
-        produk = tokopedia.search(tool)
-        products.append(produk)
+    produk = tokopedia.search(tool)
+    products.append(produk)
 
-    return products
+    tokopedia.close_connection()
+
+
+def getProducts(tools: list):
+    try:
+        products = []
+        threads = []
+
+        for tool in tools:
+            t = threading.Thread(target=threadGetProducts,
+                                 args=(products, tool))
+            t.start()
+            threads.append(t)
+
+        for thread in threads:
+            thread.join()
+
+        return products
+    except Exception as e:
+        return HTTPException(status_code=400, detail=e)
 
 
 @app.post("/api/upload")
