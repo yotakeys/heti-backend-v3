@@ -114,9 +114,20 @@ class Tokopedia:
                 decoded_uri = urllib.parse.unquote(
                     encoded_uri).split("?")[0]
                 details['url'] = decoded_uri
+
+                image_container = container.find_element(By.TAG_NAME, "div").find_element(
+                    By.TAG_NAME, "div").find_elements(By.XPATH, "./div")[0].find_element(By.TAG_NAME, "a").find_elements(
+                        By.XPATH, "./div")[0].find_element(By.TAG_NAME, "img")
+                image_url = image_container.get_attribute("src")
+                image_url = [i for i in image_url.split("/")]
+                img_url = f"{image_url[0]}//{image_url[2]}/{image_url[3]}/{image_url[6]}/{image_url[7]}/{image_url[8]}/{image_url[9]}/{image_url[10]}"
+
+                details['image_url'] = img_url
+
                 self.data.append(details)
             except Exception:
                 details['url'] = None
+                details['image_url'] = None
 
         # self.driver.execute_script("window.scrollTo(0, 1000);")
 
