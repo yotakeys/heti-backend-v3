@@ -7,9 +7,10 @@ from dotenv import load_dotenv
 import openai
 from pydub.silence import split_on_silence
 import threading
-
-from src.tokopediaScraper import Tokopedia
-from src.response import Response
+from keras.models import load_model
+import pandas as pd
+from src.service.tokopediaScraper import Tokopedia
+from src.service.response import Response
 
 app = FastAPI(title="HETI",
               version="1.0.0")
@@ -28,6 +29,38 @@ SPEECH_KEY = os.getenv('SPEECH_KEY')
 SPEECH_REGIONS = os.getenv('SPEECH_REGIONS')
 OPENAI_TOKEN = os.getenv('OPENAI_TOKEN')
 CAT_AMOUNT = os.getenv('CAT_AMOUNT')
+
+# Load rangking model
+model = load_model('src/resources/ranking')
+
+# ====================================================================================================
+# Service function
+
+
+def ranker(data):
+    def encode_price_category(price):
+        if price <= 50000:
+            return 0
+        elif price <= 100000:
+            return 1
+        elif price <= 300000:
+            return 2
+        elif price <= 1000000:
+            return 3
+        else:
+            return 4
+
+    def sort_result(result):
+        # Associate each element with its index
+        indexed_result = list(enumerate(result))
+        # Sort based on values
+        sorted_result = sorted(indexed_result, key=lambda x: x[1])
+        return sorted_result
+
+    data.loc[:, 'price'] = data['price'].apply(encode_price_category)
+
+    result = model.predict(data)
+    return sort_result(result)
 
 
 def getRecommendation(text: str) -> list:
@@ -48,8 +81,17 @@ def getRecommendation(text: str) -> list:
 
 def threadGetProducts(products, tool: str):
     tokopedia = Tokopedia("src/resources/chromedriver/chromedriver.exe")
-
     produk = tokopedia.search(tool)
+
+    produk = pd.DataFrame(produk)
+    ranks = ranker(produk[['price', 'rating', 'sold']])
+    ranks = [id[0] for id in ranks]
+    produk = produk.reindex(ranks)
+    produk = produk.drop("rank", axis=1).reset_index(drop=True).reset_index()
+    produk = produk.rename(columns={"index": "rank"})
+    produk["rank"] = produk["rank"].apply(lambda x: x+1)
+    produk = produk.to_dict(orient="records")
+
     products.append(produk)
 
     tokopedia.close_connection()
@@ -72,6 +114,10 @@ def getProducts(tools: list):
         return products
     except Exception as e:
         return HTTPException(status_code=400, detail=e)
+
+
+# ====================================================================================================
+# API ENDPOINT
 
 
 @app.post("/api/upload")
