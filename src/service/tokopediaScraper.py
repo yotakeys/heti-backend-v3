@@ -97,8 +97,11 @@ class Tokopedia:
 
         # for i in range(2):
         #     time.sleep(1)
-        containers = WebDriverWait(self.driver, 100).until(EC.presence_of_all_elements_located(
-            (By.XPATH, "//div[@data-testid='master-product-card']")))
+        try:
+            containers = WebDriverWait(self.driver, 10).until(EC.presence_of_all_elements_located(
+                (By.XPATH, "//div[@data-testid='master-product-card']")))
+        except Exception as e:
+            return []
 
         for index, container in enumerate(containers):
             detail_container = container.find_element(By.TAG_NAME, "div").find_element(
