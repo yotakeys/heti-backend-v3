@@ -111,9 +111,8 @@ class Lazada:
                 url = links.get_attribute("href")
                 details['url'] = url
 
-                image = container.find_element(By.TAG_NAME, "div").find_element(
-                    By.TAG_NAME, "div").find_elements(By.XPATH, "./div")[0].find_element(
-                        By.TAG_NAME, "a").find_element(By.TAG_NAME, "div").find_element(By.TAG_NAME, "img")
+                image = container.find_element(
+                    By.XPATH, './/img[contains(@src, "lzd-img-global")]')
                 details['image_url'] = image.get_attribute("src")
 
                 self.data.append(details)
