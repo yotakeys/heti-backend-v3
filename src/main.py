@@ -12,6 +12,7 @@ import pandas as pd
 from src.service.tokopediaScraper import Tokopedia
 from src.service.lazadaScraper import Lazada
 from src.service.response import Response
+import uuid
 
 app = FastAPI(title="HETI",
               version="1.0.0")
@@ -129,7 +130,7 @@ def getProducts(tools: list):
 def upload_audio(file: UploadFile = File(...)):
     try:
         contents = file.file.read()
-        filename = ".\\upload_files\\"+file.filename
+        filename = ".\\upload_files\\"+str(uuid.uuid4())+"-"+file.filename
 
         with open(filename, 'wb') as f:
             f.write(contents)
