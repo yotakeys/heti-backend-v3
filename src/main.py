@@ -92,6 +92,9 @@ def threadGetProducts(products, tool: str):
 
     produk = produkTokped + produkLazada
     produk = pd.DataFrame(produk)
+
+    produk = produk.dropna()
+
     ranks = ranker(produk[['price', 'rating', 'sold']])
     ranks = [id[0] for id in ranks]
     produk = produk.reindex(ranks)

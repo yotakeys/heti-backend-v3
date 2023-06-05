@@ -44,7 +44,7 @@ class Tokopedia:
                 By.XPATH, ".//div[@data-testid='spnSRPProdName']").get_attribute("innerHTML")
             detail['name'] = name
         except Exception as e:
-            ...
+            detail['name'] = None
 
         # Price
         try:
@@ -53,7 +53,7 @@ class Tokopedia:
             price = float(re.sub('[^0-9]', '', price))
             detail['price'] = price
         except Exception as e:
-            ...
+            detail['price'] = None
 
         # Location
         try:
@@ -61,7 +61,7 @@ class Tokopedia:
                 By.XPATH, ".//span[@data-testid='spnSRPProdTabShopLoc']").get_attribute("innerHTML")
             detail['location'] = location
         except Exception as e:
-            ...
+            detail['location'] = None
 
         # Rating
         try:
@@ -70,7 +70,7 @@ class Tokopedia:
             rating = float(rating)
             detail['rating'] = rating
         except Exception as e:
-            detail['rating'] = 0
+            detail['rating'] = None
 
         # Sold
         try:
@@ -83,7 +83,7 @@ class Tokopedia:
                 sold = int(re.sub('[^0-9]', '', sold))
             detail['sold'] = sold
         except Exception as e:
-            detail['sold'] = 0
+            detail['sold'] = None
 
         return detail
 

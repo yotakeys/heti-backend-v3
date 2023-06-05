@@ -44,7 +44,7 @@ class Lazada:
                 By.XPATH, ".//a").get_attribute("title")
             detail['name'] = name
         except Exception as e:
-            ...
+            detail['name'] = None
         # Price
         try:
             price = detail_container.find_elements(
@@ -53,23 +53,22 @@ class Lazada:
             price = float(re.sub('[^0-9]', '', price))
             detail['price'] = price
         except Exception as e:
-            ...
+            detail['price'] = None
         # Location
         try:
             location = detail_container.find_element(
                 By.XPATH, ".//span[contains(text(),'Kota') or contains(text(),'Kab.')]").get_attribute("innerHTML")
             detail['location'] = location
         except Exception as e:
-            ...
+            detail['location'] = None
         # # Rating
-        # try:
-        #     rating = detail_container.find_element(By.XPATH, ".//*[contains(text(),'Terjual')]").find_element(
-        #         By.XPATH, "preceding-sibling::span[2]").get_attribute("innerHTML")
-        #     rating = float(rating)
-        #     detail['rating'] = rating
-        # except Exception as e:
-        #     detail['rating'] = 0
-        detail['rating'] = 5.0
+        try:
+            rating = detail_container.find_elements(
+                By.XPATH, ".//i[@class = '_9-ogB Dy1nx']")
+            rating = float(len(rating))
+            detail['rating'] = rating
+        except Exception as e:
+            detail['rating'] = None
 
         # # Sold
         try:
@@ -82,7 +81,7 @@ class Lazada:
                 sold = int(re.sub('[^0-9]', '', sold))
             detail['sold'] = sold
         except Exception as e:
-            detail['sold'] = 0
+            detail['sold'] = None
 
         return detail
 
@@ -91,8 +90,8 @@ class Lazada:
         cat = re.sub(r'[^\w\s]', '', cat)
 
         url_safe_cat = urllib.parse.quote(cat)
-        url_safe_cat = url_safe_cat.replace("%20", "-")
-        url = f"https://www.lazada.co.id/tag/{url_safe_cat}"
+        url_safe_cat = url_safe_cat.replace("%20", "+")
+        url = f"https://www.lazada.co.id/catalog/?q={url_safe_cat}"
         # print(f'Scraping for category {cat}..')
         self.driver.get(url)
 
