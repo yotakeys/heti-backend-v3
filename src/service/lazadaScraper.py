@@ -1,3 +1,4 @@
+import json
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -7,7 +8,7 @@ import urllib.parse
 import re
 
 
-class Tokopedia:
+class Lazada:
     def __init__(self, chromedriver, headless=True) -> None:
         self.driver = self.setup(chromedriver, headless)
         self.data = []
@@ -16,7 +17,6 @@ class Tokopedia:
         opt = webdriver.ChromeOptions()
         opt.add_experimental_option('excludeSwitches', ['enable-logging'])
         if headless:
-            opt.add_argument("--headless")
             opt.add_argument("--window-size=2560,1440")
             opt.add_argument('--ignore-certificate-errors')
             opt.add_argument('--allow-running-insecure-content')
@@ -40,39 +40,38 @@ class Tokopedia:
         detail['category'] = category
         # Name
         try:
-            name = detail_container.find_element(
-                By.XPATH, ".//div[@data-testid='spnSRPProdName']").get_attribute("innerHTML")
+            name = detail_container.find_elements(By.XPATH, "./div")[1].find_element(
+                By.XPATH, ".//a").get_attribute("title")
             detail['name'] = name
         except Exception as e:
             ...
-
         # Price
         try:
-            price = detail_container.find_element(
-                By.XPATH, ".//div[@data-testid='spnSRPProdPrice']").get_attribute("innerHTML")
+            price = detail_container.find_elements(
+                By.XPATH, "./div")[2].find_element(
+                By.XPATH, ".//span").get_attribute("innerHTML")
             price = float(re.sub('[^0-9]', '', price))
             detail['price'] = price
         except Exception as e:
             ...
-
         # Location
         try:
             location = detail_container.find_element(
-                By.XPATH, ".//span[@data-testid='spnSRPProdTabShopLoc']").get_attribute("innerHTML")
+                By.XPATH, ".//span[contains(text(),'Kota') or contains(text(),'Kab.')]").get_attribute("innerHTML")
             detail['location'] = location
         except Exception as e:
             ...
+        # # Rating
+        # try:
+        #     rating = detail_container.find_element(By.XPATH, ".//*[contains(text(),'Terjual')]").find_element(
+        #         By.XPATH, "preceding-sibling::span[2]").get_attribute("innerHTML")
+        #     rating = float(rating)
+        #     detail['rating'] = rating
+        # except Exception as e:
+        #     detail['rating'] = 0
+        detail['rating'] = 5.0
 
-        # Rating
-        try:
-            rating = detail_container.find_element(By.XPATH, ".//*[contains(text(),'Terjual')]").find_element(
-                By.XPATH, "preceding-sibling::span[2]").get_attribute("innerHTML")
-            rating = float(rating)
-            detail['rating'] = rating
-        except Exception as e:
-            detail['rating'] = 0
-
-        # Sold
+        # # Sold
         try:
             sold = detail_container.find_element(
                 By.XPATH, ".//span[contains(text(),'Terjual')]").get_attribute("innerHTML")
@@ -89,32 +88,32 @@ class Tokopedia:
 
     def search(self, cat):
         self.data = []
+        cat = re.sub(r'[^\w\s]', '', cat)
 
         url_safe_cat = urllib.parse.quote(cat)
-        url = f"https://www.tokopedia.com/search?st=product&q={url_safe_cat}"
+        url_safe_cat = url_safe_cat.replace("%20", "-")
+        url = f"https://www.lazada.co.id/tag/{url_safe_cat}"
         # print(f'Scraping for category {cat}..')
         self.driver.get(url)
 
         # for i in range(2):
         #     time.sleep(1)
         containers = WebDriverWait(self.driver, 100).until(EC.presence_of_all_elements_located(
-            (By.XPATH, "//div[@data-testid='master-product-card']")))
+            (By.XPATH, "//div[@data-qa-locator='product-item']")))
 
         for index, container in enumerate(containers):
             detail_container = container.find_element(By.TAG_NAME, "div").find_element(
-                By.TAG_NAME, "div").find_elements(By.XPATH, "./div")[1].find_element(By.TAG_NAME, "a")
+                By.TAG_NAME, "div").find_elements(By.XPATH, "./div")[1]
             details = self.get_details(detail_container, cat, index)
             try:
-                links = container.find_element(
-                    By.XPATH, './/a[contains(@href, "ta.tokopedia.com")]')
+                links = detail_container.find_elements(By.XPATH, "./div")[1].find_element(
+                    By.XPATH, ".//a")
                 url = links.get_attribute("href")
-                encoded_uri = url.split("r=")[1]
-                decoded_uri = urllib.parse.unquote(
-                    encoded_uri).split("?")[0]
-                details['url'] = decoded_uri
+                details['url'] = url
 
-                image = container.find_element(
-                    By.XPATH, './/img[contains(@src, "images.tokopedia")]')
+                image = container.find_element(By.TAG_NAME, "div").find_element(
+                    By.TAG_NAME, "div").find_elements(By.XPATH, "./div")[0].find_element(
+                        By.TAG_NAME, "a").find_element(By.TAG_NAME, "div").find_element(By.TAG_NAME, "img")
                 details['image_url'] = image.get_attribute("src")
 
                 self.data.append(details)

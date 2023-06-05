@@ -10,6 +10,7 @@ import threading
 from keras.models import load_model
 import pandas as pd
 from src.service.tokopediaScraper import Tokopedia
+from src.service.lazadaScraper import Lazada
 from src.service.response import Response
 
 app = FastAPI(title="HETI",
@@ -81,8 +82,14 @@ def getRecommendation(text: str) -> list:
 
 def threadGetProducts(products, tool: str):
     tokopedia = Tokopedia("src/resources/chromedriver/chromedriver.exe")
-    produk = tokopedia.search(tool)
+    produkTokped = tokopedia.search(tool)
+    tokopedia.close_connection()
 
+    lazada = Lazada("src/resources/chromedriver/chromedriver.exe")
+    produkLazada = lazada.search(tool)
+    lazada.close_connection()
+
+    produk = produkTokped + produkLazada
     produk = pd.DataFrame(produk)
     ranks = ranker(produk[['price', 'rating', 'sold']])
     ranks = [id[0] for id in ranks]
@@ -90,11 +97,9 @@ def threadGetProducts(products, tool: str):
     produk = produk.drop("rank", axis=1).reset_index(drop=True).reset_index()
     produk = produk.rename(columns={"index": "rank"})
     produk["rank"] = produk["rank"].apply(lambda x: x+1)
+    produk = produk.dropna()
     produk = produk.to_dict(orient="records")
-
     products.append(produk)
-
-    tokopedia.close_connection()
 
 
 def getProducts(tools: list):
