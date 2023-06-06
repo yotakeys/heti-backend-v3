@@ -93,11 +93,11 @@ class Tokopedia:
         url_safe_cat = urllib.parse.quote(cat)
         url = f"https://www.tokopedia.com/search?st=product&q={url_safe_cat}"
         # print(f'Scraping for category {cat}..')
-        self.driver.get(url)
+        try:
+            self.driver.get(url)
 
         # for i in range(2):
         #     time.sleep(1)
-        try:
             containers = WebDriverWait(self.driver, 10).until(EC.presence_of_all_elements_located(
                 (By.XPATH, "//div[@data-testid='master-product-card']")))
         except Exception as e:
