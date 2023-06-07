@@ -89,10 +89,11 @@ class Tokopedia:
 
     def search(self, cat):
         self.data = []
-
+        cat = re.sub(r'[^\w\s]', '', cat)
         url_safe_cat = urllib.parse.quote(cat)
         url = f"https://www.tokopedia.com/search?st=product&q={url_safe_cat}"
         # print(f'Scraping for category {cat}..')
+        # print(url)
         try:
             self.driver.get(url)
 

@@ -92,6 +92,7 @@ class Lazada:
         url_safe_cat = urllib.parse.quote(cat)
         url_safe_cat = url_safe_cat.replace("%20", "+")
         url = f"https://www.lazada.co.id/catalog/?q={url_safe_cat}"
+        # print(url)
         # print(f'Scraping for category {cat}..')
         try:
             self.driver.get(url)

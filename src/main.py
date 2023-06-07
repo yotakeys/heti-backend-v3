@@ -91,19 +91,24 @@ def threadGetProducts(products, tool: str):
     lazada.close_connection()
 
     produk = produkTokped + produkLazada
-    produk = pd.DataFrame(produk)
 
-    produk = produk.dropna()
+    try:
+        produk = pd.DataFrame(produk)
 
-    ranks = ranker(produk[['price', 'rating', 'sold']])
-    ranks = [id[0] for id in ranks]
-    produk = produk.reindex(ranks)
-    produk = produk.drop("rank", axis=1).reset_index(drop=True).reset_index()
-    produk = produk.rename(columns={"index": "rank"})
-    produk["rank"] = produk["rank"].apply(lambda x: x+1)
-    produk = produk.dropna()
-    produk = produk.to_dict(orient="records")
-    products.append(produk)
+        produk = produk.dropna()
+
+        ranks = ranker(produk[['price', 'rating', 'sold']])
+        ranks = [id[0] for id in ranks]
+        produk = produk.reindex(ranks)
+        produk = produk.drop("rank", axis=1).reset_index(
+            drop=True).reset_index()
+        produk = produk.rename(columns={"index": "rank"})
+        produk["rank"] = produk["rank"].apply(lambda x: x+1)
+        produk = produk.dropna()
+        produk = produk.to_dict(orient="records")
+        products.append(produk)
+    except Exception as e:
+        return
 
 
 def getProducts(tools: list):
