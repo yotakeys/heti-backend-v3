@@ -14,8 +14,11 @@ from src.service.lazadaScraper import Lazada
 from src.service.response import Response
 import uuid
 
+ecommerce = ["tokopedia", "lazada"]
+
 app = FastAPI(title="HETI",
               version="1.0.0")
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -81,51 +84,63 @@ def getRecommendation(text: str) -> list:
     return items
 
 
-def threadGetProducts(products, tool: str):
-    tokopedia = Tokopedia("src/resources/chromedriver/chromedriver.exe")
-    produkTokped = tokopedia.search(tool)
-    tokopedia.close_connection()
+def threadGetProducts(products, ecommerce: str, tool: str):
 
-    lazada = Lazada("src/resources/chromedriver/chromedriver.exe")
-    produkLazada = lazada.search(tool)
-    lazada.close_connection()
-
-    produk = produkTokped + produkLazada
+    if ecommerce == "tokopedia":
+        tokopedia = Tokopedia("src/resources/chromedriver/chromedriver.exe")
+        produk = tokopedia.search(tool)
+        tokopedia.close_connection()
+    elif ecommerce == "lazada":
+        lazada = Lazada("src/resources/chromedriver/chromedriver.exe")
+        produk = lazada.search(tool)
+        lazada.close_connection()
 
     try:
-        produk = pd.DataFrame(produk)
-
-        produk = produk.dropna()
-
-        ranks = ranker(produk[['price', 'rating', 'sold']])
-        ranks = [id[0] for id in ranks]
-        produk = produk.reindex(ranks)
-        produk = produk.drop("rank", axis=1).reset_index(
-            drop=True).reset_index()
-        produk = produk.rename(columns={"index": "rank"})
-        produk["rank"] = produk["rank"].apply(lambda x: x+1)
-        produk = produk.dropna()
-        produk = produk.to_dict(orient="records")
-        products.append(produk)
+        products[tool] += produk
     except Exception as e:
         return
 
 
 def getProducts(tools: list):
     try:
-        products = []
+        products = dict()
         threads = []
 
         for tool in tools:
-            t = threading.Thread(target=threadGetProducts,
-                                 args=(products, tool))
-            t.start()
-            threads.append(t)
+            products[tool] = []
+
+            for e in ecommerce:
+
+                t = threading.Thread(target=threadGetProducts,
+                                     args=(products, e, tool))
+                t.start()
+                threads.append(t)
 
         for thread in threads:
             thread.join()
 
-        return products
+        res = []
+        for tool in tools:
+            try:
+                produk = pd.DataFrame(products[tool])
+
+                produk = produk.dropna()
+
+                ranks = ranker(produk[['price', 'rating', 'sold']])
+                ranks = [id[0] for id in ranks]
+                produk = produk.reindex(ranks)
+                produk = produk.drop("rank", axis=1).reset_index(
+                    drop=True).reset_index()
+                produk = produk.rename(columns={"index": "rank"})
+                produk["rank"] = produk["rank"].apply(lambda x: x+1)
+                produk = produk.dropna()
+                produk = produk.to_dict(orient="records")
+
+                res.append(produk)
+            except Exception as e:
+                continue
+
+        return res
     except Exception as e:
         return HTTPException(status_code=400, detail=e)
 
@@ -178,8 +193,8 @@ def upload_audio(file: UploadFile = File(...)):
 
         return Response(success=True, data=getProducts(tools))
 
-    except Exception:
-        return HTTPException(status_code=400, detail="Failed")
+    except Exception as e:
+        return HTTPException(status_code=400, detail=e)
     finally:
         file.file.close()
 
@@ -191,5 +206,5 @@ def recommendations(query: str):
 
         return Response(success=True, data=getProducts(tools))
 
-    except Exception:
-        return HTTPException(status_code=400, detail="Failed")
+    except Exception as e:
+        return HTTPException(status_code=400, detail=e)
