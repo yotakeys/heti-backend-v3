@@ -14,7 +14,7 @@ from src.service.lazadaScraper import Lazada
 from src.service.response import Response
 import uuid
 
-ecommerce = ["tokopedia", "lazada"]
+ECOMMERCE = ["tokopedia", "lazada"]
 
 app = FastAPI(title="HETI",
               version="1.0.0")
@@ -84,14 +84,14 @@ def getRecommendation(text: str) -> list:
     return items
 
 
-def threadGetProducts(products, ecommerce: str, tool: str):
+def threadGetProducts(products, ECOMMERCE: str, tool: str):
 
-    if ecommerce == "tokopedia":
-        tokopedia = Tokopedia("src/resources/chromedriver/chromedriver.exe")
+    if ECOMMERCE == "tokopedia":
+        tokopedia = Tokopedia("src/resources/chromedriver/chromedriver.exe", headless=False)
         produk = tokopedia.search(tool)
         tokopedia.close_connection()
-    elif ecommerce == "lazada":
-        lazada = Lazada("src/resources/chromedriver/chromedriver.exe")
+    elif ECOMMERCE == "lazada":
+        lazada = Lazada("src/resources/chromedriver/chromedriver.exe", headless=False)
         produk = lazada.search(tool)
         lazada.close_connection()
 
@@ -109,7 +109,7 @@ def getProducts(tools: list):
         for tool in tools:
             products[tool] = []
 
-            for e in ecommerce:
+            for e in ECOMMERCE:
 
                 t = threading.Thread(target=threadGetProducts,
                                      args=(products, e, tool))
