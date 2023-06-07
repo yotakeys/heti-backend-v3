@@ -79,7 +79,6 @@ class Lazada:
             detail['rating'] = None
             detail['sold'] = None
 
-        print(detail)
         return detail
 
     def search(self, cat):

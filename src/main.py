@@ -87,11 +87,11 @@ def getRecommendation(text: str) -> list:
 def threadGetProducts(products, ECOMMERCE: str, tool: str):
 
     if ECOMMERCE == "tokopedia":
-        tokopedia = Tokopedia("src/resources/chromedriver/chromedriver.exe", headless=False)
+        tokopedia = Tokopedia("src/resources/chromedriver/chromedriver.exe")
         produk = tokopedia.search(tool)
         tokopedia.close_connection()
     elif ECOMMERCE == "lazada":
-        lazada = Lazada("src/resources/chromedriver/chromedriver.exe", headless=False)
+        lazada = Lazada("src/resources/chromedriver/chromedriver.exe")
         produk = lazada.search(tool)
         lazada.close_connection()
 
