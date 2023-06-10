@@ -1,7 +1,9 @@
 from fastapi import FastAPI, HTTPException, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 import azure.cognitiveservices.speech as speechsdk
+import http.client
 import os
+import json
 from pydub import AudioSegment
 from dotenv import load_dotenv
 import openai
@@ -34,6 +36,7 @@ SPEECH_KEY = os.getenv('SPEECH_KEY')
 SPEECH_REGIONS = os.getenv('SPEECH_REGIONS')
 OPENAI_TOKEN = os.getenv('OPENAI_TOKEN')
 CAT_AMOUNT = os.getenv('CAT_AMOUNT')
+RAJAONGKIR_KEY = os.getenv('RAJAONGKIR_KEY')
 
 # Load rangking model
 model = load_model('src/resources/ranking')
@@ -150,7 +153,7 @@ def getProducts(tools: list):
 
 
 @app.post("/api/upload")
-def upload_audio(file: UploadFile = File(...)):
+async def upload_audio(file: UploadFile = File(...)):
     try:
         contents = file.file.read()
         filename = ".\\upload_files\\"+str(uuid.uuid4())+"-"+file.filename
@@ -204,7 +207,7 @@ def upload_audio(file: UploadFile = File(...)):
 
 
 @app.get("/api/recommendation")
-def recommendations(query: str):
+async def recommendations(query: str):
     try:
         tools = getRecommendation(query)
 
@@ -213,6 +216,40 @@ def recommendations(query: str):
         data["products"] = getProducts(tools)
 
         return Response(success=True, data=data)
+
+    except Exception as e:
+        return HTTPException(status_code=400, detail=e)
+
+
+@app.get("/api/cekongkir")
+async def cek_ongkir(src: str, dest: str, weight=1000):
+    try:
+        conn = http.client.HTTPSConnection("api.rajaongkir.com")
+
+        payload = f"origin={src}&destination={dest}&weight={weight}&courier=jne"
+
+        headers = {
+            'key': RAJAONGKIR_KEY,
+            'content-type': "application/x-www-form-urlencoded"
+        }
+
+        conn.request("POST", "/starter/cost", payload, headers)
+
+        res = conn.getresponse()
+        data = json.loads(res.read())
+
+        costs = 0
+        if "rajaongkir" in data and "results" in data["rajaongkir"]:
+            results = data["rajaongkir"]["results"]
+            for result in results:
+                if "costs" in result:
+                    for cost in result["costs"]:
+                        if "cost" in cost and isinstance(cost["cost"], list):
+                            for value in cost["cost"]:
+                                if "value" in value:
+                                    costs += value["value"]
+
+        return Response(success=True, data=costs/2)
 
     except Exception as e:
         return HTTPException(status_code=400, detail=e)
