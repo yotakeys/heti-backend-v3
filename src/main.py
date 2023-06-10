@@ -225,7 +225,7 @@ async def upload_audio(file: UploadFile = File(...)):
 async def recommendations(query: str):
     try:
         if (not cek_alkes(query)):
-            return Response(success=False, code=400, message="Sepertinya yang anda masukkan tidak terkait dengan alat kesahatan", data=[])
+            return Response(success=False, code=400, message="Sepertinya query yang anda masukkan tidak terkait dengan alat kesehatan.", data=[])
         tools = getRecommendation(query)
 
         data = dict()
