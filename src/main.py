@@ -205,7 +205,7 @@ async def upload_audio(file: UploadFile = File(...)):
             return HTTPException(status_code=400, detail=cancellation_details)
 
         if (not cek_alkes(result.text)):
-            return Response(succes=False, status_code=400, message="Sepertinya yang anda masukkan tidak terkait dengan alat kesahatan")
+            return Response(success=False, code=400, message="Sepertinya query yang anda masukkan tidak terkait dengan alat kesehatan.", data=[])
 
         tools = getRecommendation(result.text)
 
