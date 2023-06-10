@@ -38,8 +38,9 @@ OPENAI_TOKEN = os.getenv('OPENAI_TOKEN')
 CAT_AMOUNT = os.getenv('CAT_AMOUNT')
 RAJAONGKIR_KEY = os.getenv('RAJAONGKIR_KEY')
 
-# Load rangking model
+# Setup
 model = load_model('src/resources/ranking')
+openai.api_key = OPENAI_TOKEN
 
 # ====================================================================================================
 # Service function
@@ -71,8 +72,19 @@ def ranker(data):
     return sort_result(result)
 
 
+def cek_alkes(text: str) -> bool:
+    response = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=[
+        {"role": "system", "content": 'You are a doctor who is helpful to the user'},
+        {"role": "user", "content": f'"{text}"\nDoes this statement suggest that the person needs medical help?\nRespond "Yes" or "No" only'}
+    ], temperature=0.7, max_tokens=1000)
+
+    answer = response["choices"][0]["message"]["content"]
+    isAlkes = 'yes' in answer.lower()
+
+    return isAlkes
+
+
 def getRecommendation(text: str) -> list:
-    openai.api_key = OPENAI_TOKEN
 
     response = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=[
         {"role": "system", "content": "You are a very informative Doctor who gives informational responses"},
@@ -192,6 +204,9 @@ async def upload_audio(file: UploadFile = File(...)):
             cancellation_details = result.cancellation_details
             return HTTPException(status_code=400, detail=cancellation_details)
 
+        if (not cek_alkes(result.text)):
+            return Response(succes=False, status_code=400, message="Sepertinya yang anda masukkan tidak terkait dengan alat kesahatan")
+
         tools = getRecommendation(result.text)
 
         data = dict()
@@ -209,6 +224,8 @@ async def upload_audio(file: UploadFile = File(...)):
 @app.get("/api/recommendation")
 async def recommendations(query: str):
     try:
+        if (not cek_alkes(query)):
+            return Response(success=False, code=400, message="Sepertinya yang anda masukkan tidak terkait dengan alat kesahatan", data=[])
         tools = getRecommendation(query)
 
         data = dict()
