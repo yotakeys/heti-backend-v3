@@ -191,7 +191,11 @@ def upload_audio(file: UploadFile = File(...)):
 
         tools = getRecommendation(result.text)
 
-        return Response(success=True, data=getProducts(tools))
+        data = dict()
+        data["message"] = result.text
+        data["products"] = getProducts(tools)
+
+        return Response(success=True, data=data)
 
     except Exception as e:
         return HTTPException(status_code=400, detail=e)
@@ -204,7 +208,11 @@ def recommendations(query: str):
     try:
         tools = getRecommendation(query)
 
-        return Response(success=True, data=getProducts(tools))
+        data = dict()
+        data["message"] = query
+        data["products"] = getProducts(tools)
+
+        return Response(success=True, data=data)
 
     except Exception as e:
         return HTTPException(status_code=400, detail=e)
