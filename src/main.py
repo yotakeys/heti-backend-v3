@@ -270,3 +270,8 @@ async def cek_ongkir(src: str, dest: str, weight=1000):
 
     except Exception as e:
         return HTTPException(status_code=400, detail=e)
+
+
+@app.get("/api/")
+async def cek_ongkir():
+    return Response(success=True, data={'message': "Hello World"})
