@@ -2,4 +2,4 @@
 .env
 __pycache__
 upload_files/*
-src/resources/chromdriver
+src/resources/chromedriver
