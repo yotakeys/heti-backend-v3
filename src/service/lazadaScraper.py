@@ -54,12 +54,14 @@ class Lazada:
             detail['price'] = price
         except Exception as e:
             detail['price'] = None
-            
+
         try:
             parent_cons = detail_container.find_elements(By.TAG_NAME, "div")[4]
             # Location
-            location = parent_cons.find_elements(By.TAG_NAME, "span")[0].get_attribute("innerHTML")
+            location = detail_container.find_element(
+                By.XPATH, ".//span[contains(text(),'Kota') or contains(text(),'Kab.')]").get_attribute("innerHTML")
             detail['location'] = location
+
             # Rating
             rating = parent_cons.find_element(By.TAG_NAME, "div").find_elements(
                 By.XPATH, "./i[@class = '_9-ogB Dy1nx']")
@@ -67,13 +69,15 @@ class Lazada:
             detail['rating'] = rating
 
             # # Sold
-            sold = parent_cons.find_elements(By.TAG_NAME, "span")[1].get_attribute("innerHTML")
+            sold = detail_container.find_element(
+                By.XPATH, ".//span[contains(text(),'Terjual')]").get_attribute("innerHTML")
             if ("rb" in sold):
                 sold = int(re.sub('[^0-9]', '', sold))
                 sold = sold * 1000
             else:
                 sold = int(re.sub('[^0-9]', '', sold))
             detail['sold'] = sold
+
         except Exception as e:
             detail['location'] = None
             detail['rating'] = None
