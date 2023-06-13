@@ -274,4 +274,4 @@ async def cek_ongkir(src: str, dest: str, weight=1000):
 
 @app.get("/api/")
 async def cek_ongkir():
-    return Response(success=True, data={'message': "Hello World"})
+    return Response(success=True, data={'message': "Hello World!"})
