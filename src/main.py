@@ -4,6 +4,7 @@ import azure.cognitiveservices.speech as speechsdk
 import http.client
 import os
 import json
+import re
 from pydub import AudioSegment
 from dotenv import load_dotenv
 import openai
@@ -16,7 +17,9 @@ from src.service.lazadaScraper import Lazada
 from src.service.response import Response
 import uuid
 
-ECOMMERCE = ["lazada"]
+ECOMMERCE = ["tokopedia", "lazada"]
+cache_file_path = "src/resources/cache.json"
+
 
 app = FastAPI(title="HETI",
               version="1.0.0")
@@ -96,6 +99,9 @@ def getRecommendation(text: str) -> list:
     content = response["choices"][0]["message"]["content"]
     items = [i.replace("Item:", "").strip() for i in content.split(",")]
 
+    for idx in range(len(items)):
+        items[idx] = re.sub(r'[^\w\s]', '', items[idx])
+
     return items
 
 
@@ -121,8 +127,16 @@ def getProducts(tools: list):
         products = dict()
         threads = []
 
+        cache = dict()
+        with open(cache_file_path, 'r') as outfile:
+            cache = json.load(outfile)
+
         for tool in tools:
             products[tool] = []
+
+            if tool in cache:
+                products[tool] += cache[tool]
+                continue
 
             for e in ECOMMERCE:
 
@@ -151,9 +165,14 @@ def getProducts(tools: list):
                 produk = produk.dropna()
                 produk = produk.to_dict(orient="records")
 
+                cache[tool] = produk
+
                 res.append(produk)
             except Exception as e:
                 continue
+
+        with open(cache_file_path, "w") as outfile:
+            json.dump(cache, outfile)
 
         return res
     except Exception as e:
