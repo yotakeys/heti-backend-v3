@@ -135,6 +135,7 @@ def getProducts(tools: list):
             products[tool] = []
 
             if tool in cache:
+                print("masuk")
                 products[tool] += cache[tool]
                 continue
 
@@ -171,8 +172,15 @@ def getProducts(tools: list):
             except Exception as e:
                 continue
 
+        new_cache = dict()
+        with open(cache_file_path, 'r') as outfile:
+            new_cache = json.load(outfile)
+
+        for tool in tools:
+            new_cache[tool] = cache[tool]
+
         with open(cache_file_path, "w") as outfile:
-            json.dump(cache, outfile)
+            json.dump(new_cache, outfile)
 
         return res
     except Exception as e:
@@ -292,5 +300,5 @@ async def cek_ongkir(src: str, dest: str, weight=1000):
 
 
 @app.get("/api/")
-async def cek_ongkir():
+async def hello_world():
     return Response(success=True, data={'message': "Hello World!"})
