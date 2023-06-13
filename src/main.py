@@ -16,7 +16,7 @@ from src.service.lazadaScraper import Lazada
 from src.service.response import Response
 import uuid
 
-ECOMMERCE = ["tokopedia", "lazada"]
+ECOMMERCE = ["lazada"]
 
 app = FastAPI(title="HETI",
               version="1.0.0")
