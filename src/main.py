@@ -24,7 +24,6 @@ cache_file_path = "src/resources/cache.json"
 app = FastAPI(title="HETI",
               version="1.0.0")
 
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -191,7 +190,7 @@ def getProducts(tools: list):
 # API ENDPOINT
 
 
-@app.post("/api/upload")
+@app.post("/smart/kango/api/upload")
 async def upload_audio(file: UploadFile = File(...)):
     try:
         contents = file.file.read()
@@ -248,7 +247,7 @@ async def upload_audio(file: UploadFile = File(...)):
         file.file.close()
 
 
-@app.get("/api/recommendation")
+@app.get("/smart/kango/api/recommendation")
 async def recommendations(query: str):
     try:
         if (not cek_alkes(query)):
@@ -265,7 +264,7 @@ async def recommendations(query: str):
         return HTTPException(status_code=400, detail=e)
 
 
-@app.get("/api/cekongkir")
+@app.get("/smart/kango/api/cekongkir")
 async def cek_ongkir(src: str, dest: str, weight=1000):
     try:
         conn = http.client.HTTPSConnection("api.rajaongkir.com")
@@ -299,6 +298,6 @@ async def cek_ongkir(src: str, dest: str, weight=1000):
         return HTTPException(status_code=400, detail=e)
 
 
-@app.get("/api/")
+@app.get("/smart/kango/api/")
 async def hello_world():
     return Response(success=True, data={'message': "Hello World!"})
