@@ -8,11 +8,11 @@ import re
 
 
 class Tokopedia:
-    def __init__(self, chromedriver, headless=True) -> None:
-        self.driver = self.setup(chromedriver, headless)
+    def __init__(self, headless=True) -> None:
+        self.driver = self.setup(headless)
         self.data = []
 
-    def setup(self, chromedriver, headless):
+    def setup(self, headless):
         opt = webdriver.ChromeOptions()
         opt.add_experimental_option('excludeSwitches', ['enable-logging'])
         if headless:
@@ -31,7 +31,7 @@ class Tokopedia:
             user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'
             opt.add_argument(f'user-agent={user_agent}')
 
-        return webdriver.Chrome(executable_path=chromedriver, options=opt)
+        return webdriver.Chrome(options=opt)
 
     def get_details(self, detail_container, category, rank):
         # Scrape to get all parameters
