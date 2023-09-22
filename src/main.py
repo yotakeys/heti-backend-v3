@@ -75,10 +75,13 @@ def ranker(data):
 
 
 def cek_alkes(text: str) -> bool:
+    print('here')
     response = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=[
         {"role": "system", "content": 'You are a doctor who is helpful to the user'},
         {"role": "user", "content": f'"{text}"\nDoes this statement suggest that the person needs medical help?\nRespond "Yes" or "No" only'}
     ], temperature=0.7, max_tokens=1000)
+    
+    print(response)
 
     answer = response["choices"][0]["message"]["content"]
     isAlkes = 'yes' in answer.lower()
