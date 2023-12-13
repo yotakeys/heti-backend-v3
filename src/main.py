@@ -193,6 +193,12 @@ def getProducts(tools: list):
 
 @app.post("/api/upload")
 async def upload_audio(file: UploadFile = File(...)):
+    with open('./src/resources/visitor.json', "r") as json_file:
+        data = json.load(json_file)
+        data['voice'] += 1
+    with open('./src/resources/visitor.json', "w") as json_file:
+        json.dump(data, json_file)
+
     try:
         contents = file.file.read()
         filename = ".\\upload_files\\"+str(uuid.uuid4())+"-"+file.filename
@@ -250,6 +256,11 @@ async def upload_audio(file: UploadFile = File(...)):
 
 @app.get("/api/recommendation")
 async def recommendations(query: str):
+    with open('./src/resources/visitor.json', "r") as json_file:
+        data = json.load(json_file)
+        data['search'] += 1
+    with open('./src/resources/visitor.json', "w") as json_file:
+        json.dump(data, json_file)
     try:
         if (not cek_alkes(query)):
             return Response(success=False, code=400, message="Sepertinya query yang anda masukkan tidak terkait dengan alat kesehatan.", data=[])
@@ -267,6 +278,12 @@ async def recommendations(query: str):
 
 @app.get("/api/cekongkir")
 async def cek_ongkir(src: str, dest: str, weight=1000):
+    data = dict()
+    with open('./src/resources/visitor.json', "r") as json_file:
+        data = json.load(json_file)
+        data['ongkir'] += 1
+    with open('./src/resources/visitor.json', "w") as json_file:
+        json.dump(data, json_file)
     try:
         conn = http.client.HTTPSConnection("api.rajaongkir.com")
 
