@@ -1,0 +1,457 @@
+nohup: ignoring input
+2023-09-23 08:46:39.628144: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
+2023-09-23 08:46:39.688189: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
+2023-09-23 08:46:39.688616: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-09-23 08:46:40.531908: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+INFO:     Started server process [43000]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     116.206.40.37:0 - "POST /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 107ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 28ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 22ms/step
+INFO:     116.206.40.37:0 - "POST /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 24ms/step
+INFO:     116.206.40.37:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     139.228.67.191:0 - "OPTIONS /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 18ms/step
+INFO:     139.228.67.191:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     139.228.67.191:0 - "OPTIONS /api/cekongkir?src=1&dest=1 HTTP/1.1" 200 OK
+INFO:     139.228.67.191:0 - "GET /api/cekongkir?src=1&dest=1 HTTP/1.1" 200 OK
+INFO:     45.90.61.179:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     45.90.61.179:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     176.53.221.134:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     176.53.221.134:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     223.111.175.9:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     223.111.175.9:0 - "GET /sitemap.xml HTTP/1.1" 404 Not Found
+INFO:     223.111.175.9:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     223.111.175.4:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     223.111.175.4:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     223.111.175.4:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     223.111.175.4:0 - "GET /sitemap.xml HTTP/1.1" 404 Not Found
+INFO:     139.228.67.191:0 - "OPTIONS /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 20ms/step
+INFO:     139.228.67.191:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     36.70.182.92:0 - "GET /.git/ HTTP/1.1" 404 Not Found
+INFO:     157.245.100.182:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     139.228.67.191:0 - "OPTIONS /api/recommendation?query=sakit%20perut HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 20ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 20ms/step
+INFO:     139.228.67.191:0 - "GET /api/recommendation?query=sakit%20perut HTTP/1.1" 200 OK
+INFO:     139.228.67.191:0 - "OPTIONS /api/recommendation?query=sakit%20kepala HTTP/1.1" 200 OK
+INFO:     139.228.67.191:0 - "GET /api/recommendation?query=sakit%20kepala HTTP/1.1" 200 OK
+INFO:     139.228.67.191:0 - "OPTIONS /api/recommendation?query=sakit%20punggung HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 22ms/step
+INFO:     139.228.67.191:0 - "GET /api/recommendation?query=sakit%20punggung HTTP/1.1" 200 OK
+INFO:     106.75.17.69:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     106.75.17.69:0 - "GET /sitemap.xml HTTP/1.1" 404 Not Found
+INFO:     106.75.17.69:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     106.75.74.57:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     106.75.74.57:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     106.75.74.57:0 - "GET /sitemap.xml HTTP/1.1" 404 Not Found
+INFO:     106.75.74.57:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     167.94.138.50:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     167.248.133.50:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     103.94.190.19:0 - "OPTIONS /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 19ms/step
+INFO:     103.94.190.19:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     103.94.190.19:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     103.94.190.19:0 - "POST /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 20ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 21ms/step
+INFO:     103.94.190.19:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     103.94.190.19:0 - "OPTIONS /api/cekongkir?src=153&dest=444 HTTP/1.1" 200 OK
+INFO:     103.94.190.19:0 - "GET /api/cekongkir?src=153&dest=444 HTTP/1.1" 200 OK
+INFO:     103.94.190.19:0 - "OPTIONS /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 21ms/step
+INFO:     103.94.190.19:0 - "POST /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 22ms/step
+INFO:     103.94.190.19:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     103.94.190.19:0 - "OPTIONS /api/upload HTTP/1.1" 200 OK
+INFO:     103.94.190.19:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     103.94.190.19:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     103.94.190.19:0 - "OPTIONS /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 20ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 18ms/step
+INFO:     103.94.190.19:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     139.228.67.160:0 - "OPTIONS /api/upload HTTP/1.1" 200 OK
+INFO:     139.228.67.160:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     139.228.67.160:0 - "OPTIONS /api/upload HTTP/1.1" 200 OK
+INFO:     139.228.67.160:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     139.228.67.160:0 - "POST /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 23ms/step
+INFO:     139.228.67.160:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     173.252.107.4:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     31.13.127.21:0 - "GET /?fbclid=IwAR20YJgZ4hbUEWsIZokJIX4dXJYi8LteoCQpUtJ5JNvdH--YykQ8R8OOFi8 HTTP/1.1" 404 Not Found
+INFO:     173.252.127.18:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     198.235.24.134:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     162.142.125.217:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     162.142.125.223:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     206.189.114.45:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     36.90.162.28:0 - "OPTIONS /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 31ms/step
+INFO:     36.90.162.28:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     36.90.162.28:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "OPTIONS /api/upload HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "POST /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 25ms/step
+INFO:     36.90.162.28:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     36.90.162.28:0 - "POST /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 21ms/step
+INFO:     36.90.162.28:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     36.90.162.28:0 - "OPTIONS /api/cekongkir?src=6&dest=16 HTTP/1.1" 200 OK
+INFO:     36.90.162.28:0 - "GET /api/cekongkir?src=6&dest=16 HTTP/1.1" 200 OK
+INFO:     36.90.162.28:0 - "GET /api/cekongkir?src=6&dest=16 HTTP/1.1" 200 OK
+INFO:     36.90.162.28:0 - "OPTIONS /api/cekongkir?src=100&dest=19 HTTP/1.1" 200 OK
+INFO:     36.90.162.28:0 - "GET /api/cekongkir?src=100&dest=19 HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "OPTIONS /api/upload HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "OPTIONS /api/recommendation?query=batuk HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "GET /api/recommendation?query=batuk HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "OPTIONS /api/recommendation?query=pilek HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "GET /api/recommendation?query=pilek HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "OPTIONS /api/recommendation?query=flu HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "GET /api/recommendation?query=flu HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "OPTIONS /api/cekongkir?src=1&dest=1 HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "GET /api/cekongkir?src=1&dest=1 HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "GET /api/cekongkir?src=1&dest=1 HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "POST /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 21ms/step
+INFO:     36.81.191.220:0 - "GET /api/recommendation?query=flu HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "OPTIONS /api/recommendation?query=pusing HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "GET /api/recommendation?query=pusing HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "GET /api/cekongkir?src=1&dest=1 HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "GET /api/cekongkir?src=1&dest=1 HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "GET /api/recommendation?query=flu HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "GET /api/cekongkir?src=1&dest=1 HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "GET /api/cekongkir?src=1&dest=1 HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "GET /api/cekongkir?src=1&dest=1 HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "GET /api/cekongkir?src=1&dest=1 HTTP/1.1" 200 OK
+INFO:     103.94.190.24:0 - "OPTIONS /api/recommendation?query=saya%20sering%20mengalami%20batuk%20batuk HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 22ms/step
+INFO:     103.94.190.24:0 - "GET /api/recommendation?query=saya%20sering%20mengalami%20batuk%20batuk HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "OPTIONS /api/recommendation?query=sering%20ngantuk HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "GET /api/recommendation?query=sering%20ngantuk HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "OPTIONS /api/cekongkir?src=1&dest=1 HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "GET /api/cekongkir?src=1&dest=1 HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "GET /api/cekongkir?src=1&dest=1 HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "GET /api/cekongkir?src=1&dest=1 HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 21ms/step
+INFO:     103.94.190.24:0 - "GET /api/recommendation?query=saya%20sering%20mengalami%20batuk%20batuk HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "OPTIONS /api/recommendation?query=saya%20sering%20mengalami%20batuk%20batuk HTTP/1.1" 200 OK
+INFO:     36.81.191.220:0 - "GET /api/recommendation?query=saya%20sering%20mengalami%20batuk%20batuk HTTP/1.1" 200 OK
+INFO:     198.235.24.177:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     45.135.57.222:0 - "GET /.git/HEAD HTTP/1.1" 404 Not Found
+INFO:     174.138.58.239:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     114.125.92.219:0 - "OPTIONS /api/recommendation?query=kepala%20saya%20sakit HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 23ms/step
+INFO:     114.125.92.219:0 - "GET /api/recommendation?query=kepala%20saya%20sakit HTTP/1.1" 200 OK
+INFO:     114.125.92.219:0 - "OPTIONS /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 25ms/step
+INFO:     114.125.92.219:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     114.125.92.219:0 - "OPTIONS /api/recommendation?query=Kaki%20saya%20sakit%20sehingga%20saya%20kesulitan%20berjalan HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 25ms/step
+INFO:     114.125.92.219:0 - "GET /api/recommendation?query=Kaki%20saya%20sakit%20sehingga%20saya%20kesulitan%20berjalan HTTP/1.1" 200 OK
+INFO:     114.125.92.219:0 - "OPTIONS /api/upload HTTP/1.1" 200 OK
+INFO:     114.125.92.219:0 - "POST /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 20ms/step
+INFO:     114.125.92.219:0 - "POST /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 22ms/step
+INFO:     114.125.92.219:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     114.125.92.219:0 - "OPTIONS /api/recommendation?query=Saya%20butuh%20alat%20bantu%20untuk%20bernafas HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 27ms/step
+INFO:     114.125.92.219:0 - "GET /api/recommendation?query=Saya%20butuh%20alat%20bantu%20untuk%20bernafas HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 21ms/step
+INFO:     114.125.92.219:0 - "GET /api/recommendation?query=Saya%20butuh%20alat%20bantu%20untuk%20bernafas HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 23ms/step
+INFO:     114.125.92.219:0 - "POST /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 24ms/step
+INFO:     114.125.92.219:0 - "POST /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 25ms/step
+INFO:     114.125.92.219:0 - "POST /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 24ms/step
+INFO:     114.125.92.219:0 - "POST /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 20ms/step
+INFO:     114.125.92.219:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     114.125.92.219:0 - "OPTIONS /api/recommendation?query=Saya%20butuh%20alat%20bantu%20untuk%20bernafas HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 30ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 30ms/step
+INFO:     114.125.92.219:0 - "GET /api/recommendation?query=Saya%20butuh%20alat%20bantu%20untuk%20bernafas HTTP/1.1" 200 OK
+INFO:     114.125.92.219:0 - "OPTIONS /api/cekongkir?src=151&dest=444 HTTP/1.1" 200 OK
+INFO:     114.125.92.219:0 - "GET /api/cekongkir?src=151&dest=444 HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 23ms/step
+INFO:     114.125.92.219:0 - "GET /api/recommendation?query=Saya%20butuh%20alat%20bantu%20untuk%20bernafas HTTP/1.1" 200 OK
+INFO:     114.125.92.219:0 - "GET /api/cekongkir?src=151&dest=444 HTTP/1.1" 200 OK
+INFO:     114.125.92.219:0 - "OPTIONS /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 31ms/step
+INFO:     114.125.92.219:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     114.125.92.219:0 - "OPTIONS /api/recommendation?query=Saya%20butuh%20alat%20bantu%20untuk%20bernafas HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 29ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 34ms/step
+INFO:     114.125.92.219:0 - "GET /api/recommendation?query=Saya%20butuh%20alat%20bantu%20untuk%20bernafas HTTP/1.1" 200 OK
+INFO:     114.125.92.219:0 - "OPTIONS /api/cekongkir?src=151&dest=444 HTTP/1.1" 200 OK
+INFO:     114.125.92.219:0 - "GET /api/cekongkir?src=151&dest=444 HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 24ms/step
+INFO:     114.125.92.219:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     114.125.92.219:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     34.251.62.224:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     167.248.133.127:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     167.248.133.186:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     87.236.176.180:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     87.236.176.230:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     188.165.87.106:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     37.187.215.240:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     51.254.49.105:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     51.254.49.109:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     36.81.110.117:0 - "OPTIONS /api/cekongkir?src=2&dest=4 HTTP/1.1" 200 OK
+INFO:     36.81.110.117:0 - "GET /api/cekongkir?src=2&dest=4 HTTP/1.1" 200 OK
+INFO:     36.81.110.117:0 - "OPTIONS /api/upload HTTP/1.1" 200 OK
+INFO:     87.236.176.75:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     198.235.24.15:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     167.248.133.188:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     167.94.146.60:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     198.235.24.242:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     205.210.31.174:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     144.91.106.14:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     144.91.106.14:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     18.188.25.247:0 - "GET /api HTTP/1.1" 307 Temporary Redirect
+INFO:     18.188.25.247:0 - "GET /api/ HTTP/1.1" 200 OK
+INFO:     87.236.176.149:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     103.94.190.24:0 - "OPTIONS /api/recommendation?query=Kaki%20say%20sakit%2C%20sehihga%20says%20butuh%20bantuan%20berjalan HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 27ms/step
+INFO:     103.94.190.24:0 - "GET /api/recommendation?query=Kaki%20say%20sakit%2C%20sehihga%20says%20butuh%20bantuan%20berjalan HTTP/1.1" 200 OK
+INFO:     139.228.67.160:0 - "OPTIONS /api/recommendation?query=sakit%20pilek HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 27ms/step
+INFO:     139.228.67.160:0 - "GET /api/recommendation?query=sakit%20pilek HTTP/1.1" 200 OK
+INFO:     139.228.67.160:0 - "OPTIONS /api/recommendation?query=sakit%20kaki HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 28ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 24ms/step
+INFO:     139.228.67.160:0 - "GET /api/recommendation?query=sakit%20kaki HTTP/1.1" 200 OK
+INFO:     139.228.67.160:0 - "OPTIONS /api/recommendation?query=sakit%20lutut HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 27ms/step
+INFO:     139.228.67.160:0 - "GET /api/recommendation?query=sakit%20lutut HTTP/1.1" 200 OK
+INFO:     139.228.67.160:0 - "OPTIONS /api/recommendation?query=sakit%20asam%20lambung HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 22ms/step
+INFO:     139.228.67.160:0 - "GET /api/recommendation?query=sakit%20asam%20lambung HTTP/1.1" 200 OK
+INFO:     167.248.133.33:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     205.210.31.83:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     167.248.133.123:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     65.154.226.169:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     137.184.217.69:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     167.248.133.33:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     159.223.150.42:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     103.94.190.19:0 - "OPTIONS /api/cekongkir?src=1&dest=1 HTTP/1.1" 200 OK
+INFO:     103.94.190.19:0 - "GET /api/cekongkir?src=1&dest=1 HTTP/1.1" 200 OK
+INFO:     103.94.190.19:0 - "OPTIONS /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 27ms/step
+INFO:     103.94.190.19:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     103.94.190.19:0 - "GET /api/cekongkir?src=1&dest=1 HTTP/1.1" 200 OK
+INFO:     114.5.246.16:0 - "OPTIONS /api/upload HTTP/1.1" 200 OK
+INFO:     114.5.246.16:0 - "OPTIONS /api/recommendation?query=Sakit%20punggung%20 HTTP/1.1" 200 OK
+INFO:     103.94.190.19:0 - "POST /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 28ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 29ms/step
+INFO:     114.5.246.16:0 - "GET /api/recommendation?query=Sakit%20punggung%20 HTTP/1.1" 200 OK
+INFO:     120.188.85.92:0 - "OPTIONS /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 26ms/step
+INFO:     103.94.190.19:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     120.188.85.92:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     182.1.119.131:0 - "OPTIONS /api/recommendation?query=kaki%20saya%20sakit%2C%20saya%20butuh%20alat%20bantu%20untuk%20berjalan HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 23ms/step
+INFO:     182.1.119.131:0 - "GET /api/recommendation?query=kaki%20saya%20sakit%2C%20saya%20butuh%20alat%20bantu%20untuk%20berjalan HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 28ms/step
+INFO:     120.188.85.92:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     182.1.119.131:0 - "OPTIONS /api/recommendation?query=Saya%20butuh%20alat%20bantu%20untuk%20bernafas HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 24ms/step
+INFO:     182.1.119.131:0 - "GET /api/recommendation?query=kaki%20saya%20sakit%2C%20saya%20butuh%20alat%20bantu%20untuk%20berjalan HTTP/1.1" 200 OK
+INFO:     182.1.119.131:0 - "OPTIONS /api/recommendation?query=Saya%20butuh%20alat%20bantu%20untuk%20bernafas HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 22ms/step
+INFO:     182.1.119.131:0 - "GET /api/recommendation?query=Saya%20butuh%20alat%20bantu%20untuk%20bernafas HTTP/1.1" 200 OK
+INFO:     103.94.190.19:0 - "OPTIONS /api/upload HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 30ms/step
+INFO:     103.94.190.19:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     114.5.246.16:0 - "OPTIONS /api/recommendation?query=Gym HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 30ms/step
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 24ms/step
+INFO:     103.94.190.19:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     182.1.119.131:0 - "OPTIONS /api/recommendation?query=saya%20butuh%20alat%20bantu%20untuk%20bernafas HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 26ms/step
+INFO:     182.1.119.131:0 - "GET /api/recommendation?query=saya%20butuh%20alat%20bantu%20untuk%20bernafas HTTP/1.1" 200 OK
+INFO:     182.1.119.131:0 - "OPTIONS /api/recommendation?query=kaki%20saya%20sakit%2C%20saya%20butuh%20alat%20bantu%20untuk%20berjalan HTTP/1.1" 200 OK
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 25ms/step
+INFO:     182.1.119.131:0 - "GET /api/recommendation?query=kaki%20saya%20sakit%2C%20saya%20butuh%20alat%20bantu%20untuk%20berjalan HTTP/1.1" 200 OK
+INFO:     3.21.103.20:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     167.94.138.52:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     35.215.78.91:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     167.248.133.127:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     167.94.138.49:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     35.212.166.193:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     199.45.154.51:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     199.45.154.19:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     107.6.112.254:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     188.166.19.198:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     3.20.226.54:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     52.31.177.148:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     107.6.112.254:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     52.51.23.2:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     15.204.183.219:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     107.6.113.68:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     161.35.92.210:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     199.45.154.17:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     199.45.155.19:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     198.235.24.184:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     199.45.154.50:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     64.227.126.135:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     64.227.126.135:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     64.227.126.135:0 - "GET /version HTTP/1.1" 404 Not Found
+INFO:     64.227.126.135:0 - "GET /.vscode/sftp.json HTTP/1.1" 404 Not Found
+INFO:     64.227.126.135:0 - "GET /about HTTP/1.1" 404 Not Found
+INFO:     64.227.126.135:0 - "GET /debug/default/view?panel=config HTTP/1.1" 404 Not Found
+INFO:     64.227.126.135:0 - "GET /v2/_catalog HTTP/1.1" 404 Not Found
+INFO:     64.227.126.135:0 - "GET /ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application HTTP/1.1" 404 Not Found
+INFO:     64.227.126.135:0 - "GET /server-status HTTP/1.1" 404 Not Found
+INFO:     64.227.126.135:0 - "GET /login.action HTTP/1.1" 404 Not Found
+INFO:     64.227.126.135:0 - "GET /_all_dbs HTTP/1.1" 404 Not Found
+INFO:     64.227.126.135:0 - "GET /.DS_Store HTTP/1.1" 404 Not Found
+INFO:     64.227.126.135:0 - "GET /.env HTTP/1.1" 404 Not Found
+INFO:     64.227.126.135:0 - "GET /.git/config HTTP/1.1" 404 Not Found
+INFO:     64.227.126.135:0 - "GET /s/4353e20313e27343e2336313/_/%3B/META-INF/maven/com.atlassian.jira/jira-webapp-dist/pom.properties HTTP/1.1" 404 Not Found
+INFO:     64.227.126.135:0 - "GET /config.json HTTP/1.1" 404 Not Found
+INFO:     64.227.126.135:0 - "GET /telescope/requests HTTP/1.1" 404 Not Found
+INFO:     64.227.126.135:0 - "GET /?rest_route=/wp/v2/users/ HTTP/1.1" 404 Not Found
+INFO:     52.87.186.214:0 - "HEAD / HTTP/1.1" 404 Not Found
+INFO:     52.87.186.214:0 - "HEAD / HTTP/1.1" 404 Not Found
+INFO:     65.154.226.169:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     35.189.34.177:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     179.43.169.181:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     65.154.226.170:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     205.169.39.70:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     206.217.205.62:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     35.189.47.117:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     199.45.154.18:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     71.6.134.233:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     133.242.174.119:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     133.242.174.119:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     47.88.93.234:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     47.89.193.162:0 - "GET /Public/home/js/check.js HTTP/1.1" 404 Not Found
+INFO:     47.88.6.178:0 - "GET /static/admin/javascript/hetong.js HTTP/1.1" 404 Not Found
+INFO:     176.53.222.210:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     89.104.101.134:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     176.53.222.210:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     89.104.101.134:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     89.104.101.134:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     165.22.233.185:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     199.45.154.48:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     199.45.155.17:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     205.210.31.90:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     205.210.31.43:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     54.202.165.132:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     188.165.87.107:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     37.187.215.240:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     51.254.49.110:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     51.254.49.107:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     205.210.31.164:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     3.143.245.163:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     35.92.107.240:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     71.6.134.231:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     142.93.10.239:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     3.235.21.164:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     3.235.21.164:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     3.235.21.164:0 - "GET /sitemap.xml HTTP/1.1" 404 Not Found
+INFO:     3.235.21.164:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     198.235.24.234:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     3.110.236.102:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     205.210.31.140:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     205.210.31.161:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     159.89.172.232:0 - "GET /.env HTTP/1.1" 404 Not Found
+INFO:     159.89.172.232:0 - "POST / HTTP/1.1" 404 Not Found
+INFO:     159.89.172.232:0 - "POST /core/.env HTTP/1.1" 404 Not Found
+INFO:     159.89.172.232:0 - "GET /core/.env HTTP/1.1" 404 Not Found
+INFO:     159.89.172.232:0 - "POST / HTTP/1.1" 404 Not Found
+INFO:     159.89.172.232:0 - "POST /core/.env HTTP/1.1" 404 Not Found
+INFO:     223.113.128.173:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     198.235.24.174:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     106.75.14.170:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     106.75.14.170:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     106.75.14.170:0 - "GET /sitemap.xml HTTP/1.1" 404 Not Found
+INFO:     106.75.2.171:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     106.75.2.171:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     106.75.2.171:0 - "GET /sitemap.xml HTTP/1.1" 404 Not Found
+INFO:     106.75.2.171:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     52.212.214.215:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     71.6.134.231:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     54.194.217.174:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     205.210.31.197:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     3.249.14.92:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     205.210.31.95:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     3.80.120.160:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     3.80.120.160:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     205.210.31.169:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     71.6.134.233:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     198.235.24.148:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     64.226.94.55:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     31.186.172.143:0 - "GET /wp-login.php HTTP/1.1" 404 Not Found
+INFO:     188.165.87.111:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     37.187.215.246:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     51.254.49.107:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     51.254.49.103:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     36.74.174.124:0 - "OPTIONS /api/upload HTTP/1.1" 200 OK
+INFO:     36.74.174.124:0 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     51.81.46.212:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     173.201.181.184:0 - "GET /wp-login.php HTTP/1.1" 404 Not Found
+INFO:     71.6.134.232:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     199.45.154.48:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     199.45.155.35:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     165.232.102.72:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     71.6.134.235:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     199.45.155.33:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     92.205.3.142:0 - "GET /wp-login.php HTTP/1.1" 404 Not Found
+INFO:     199.45.154.51:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     199.45.155.32:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     52.49.100.121:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     71.6.134.233:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     198.235.24.51:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     52.208.119.214:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     159.89.172.232:0 - "GET /.env HTTP/1.1" 404 Not Found
+INFO:     159.89.172.232:0 - "POST / HTTP/1.1" 404 Not Found
+INFO:     159.89.172.232:0 - "POST /core/.env HTTP/1.1" 404 Not Found
+INFO:     159.89.172.232:0 - "GET /core/.env HTTP/1.1" 404 Not Found
+INFO:     159.89.172.232:0 - "POST / HTTP/1.1" 404 Not Found
+INFO:     159.89.172.232:0 - "POST /core/.env HTTP/1.1" 404 Not Found
+INFO:     198.235.24.16:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     198.235.24.153:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     199.45.155.32:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     199.45.154.19:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     167.71.5.192:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     205.210.31.134:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     71.6.134.232:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     198.235.24.249:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     113.161.93.118:0 - "GET /wp-login.php HTTP/1.1" 404 Not Found
+INFO:     198.235.24.168:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     51.81.46.212:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [43000]

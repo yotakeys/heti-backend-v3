@@ -3,3 +3,5 @@
 __pycache__
 upload_files/*
 src/resources/chromedriver
+upload_files
+*.log
